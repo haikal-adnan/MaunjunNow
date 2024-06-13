@@ -1,0 +1,1708 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(68, 68, 68);
+
+}
+
+p{
+    font-family: 'Maiden Orange', cursive;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.mapDisplay{
+    width: 768px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.displayMap{
+    width: 100px;
+    position: relative;
+    right: 10px;
+    top: 30px;
+    
+
+}
+
+.mapPicture{
+    cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: wheat;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+}
+
+.displayMap a{
+    text-decoration: none;
+    
+}
+
+.displayMap p{
+    text-align: center;
+    width: 200px;
+    position: relative;
+    left: -45px;
+    bottom: 10px;
+    color: #001C30;
+    font-family: 'Maiden Orange', cursive;
+}
+
+.questButton{
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+}
+
+.navigation{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    left: 12px;
+    top: 30px;
+    transition: 1s;
+    
+}
+
+.new{
+    position: relative;
+    right: 22px;
+    top: 8px;
+    width: auto;
+    height: 0px;
+}
+
+.navImg{
+    width: auto;
+    height: 50px;
+    
+}
+
+.navigation > div{
+    margin: 5px;
+    cursor: pointer;
+}
+
+.questDisplay{
+    background-color: antiquewhite;
+    width: 0px;
+    height: 120px;
+    position: relative;
+    left: 300px;
+    top: 20px;
+    border-radius: 10px 10px 0px 0px;
+    visibility: hidden;
+    opacity: 0.6;
+    transition: width 2s;
+    display: block;
+}
+
+.questDisplay > p{
+    opacity: 0;
+    font-family: 'Maiden Orange', cursive;
+    position: relative;
+    left: 20;
+}
+
+.quest1,.quest2,.quest3{
+    opacity: 0;
+    font-family: 'Maiden Orange', cursive;
+    position: relative;
+    left: 20;
+}
+
+.baitSelect{
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 200px;
+    gap: 3px;
+    visibility: visible;
+    transition: 0.5s;
+}
+
+.baitName{
+    position: relative;
+    height: 26px;
+    width: 87px;
+    text-align: center;
+    background-color: #facaa6;
+    border-radius: 5px 5px 0px 0px;
+    opacity: 0.9;
+    color: black;
+    font-family: 'Maiden Orange', cursive;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.9);
+    border: 0;
+    font-size: 20;
+    
+}
+
+.baitName:active {
+    background-color: #ffaa68;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+.baitStock{
+    position: relative;
+    font-family: 'Maiden Orange', cursive;
+    font-size: 20;
+}
+
+.baitLeft{
+    position: relative;
+    width: 21px;
+    height: 24px;
+    background-color: #ffb073;
+    top: -50px;
+    left: -29px;
+    border: 0;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+    
+}
+
+.baitRight{
+    top: -50px;
+    left: 28px;
+    position: relative;
+    width: 21px;
+    height: 24px;
+    background-color: #ffb073;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+    border: 0;
+}
+
+.baitRight img{
+    max-width: 12px;
+    position: relative;
+    left: -1px;
+   
+}
+
+.baitLeft img{
+    max-width: 12px;
+    position: relative;
+    left: -3px;
+}
+
+.baitRight:active {
+    transform: translateX(2px);
+  }
+
+.baitLeft:active{
+    transform: translateX(-2px)
+  }
+
+.bait{
+    position: relative;
+    width: 86px;
+    height: 86px;
+    top: 0px;
+    background-color: #FFD4B2;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    outline: none;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+}
+
+.baitImg{
+    width: auto;
+    height: 60px;
+}
+
+
+.fishing{
+    transition: 0.5s;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 70px;
+    
+}
+
+.fishingButton{
+    opacity: 0.8;
+    position: relative;
+    padding: 20px 50px;
+    height: 100px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0.3s;
+    visibility: visible;
+    
+    
+}
+
+.fishingButton:hover {background-color: #3e8e41}
+
+.fishingButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.catchButton{
+    opacity: 0;
+    position: relative;
+    padding: 20px 50px;
+    height: 100px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0.3s;
+    display: none;
+    
+}
+
+.catchButton:hover {background-color: #3e8e41}
+
+.catchButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.catchBagButton{
+    opacity: 0.8;
+    position: relative;
+    padding: 20px 50px;
+    height: 100px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0.3s;
+    visibility: visible;
+    display: none;
+    
+    
+}
+
+.catchBagButton:hover {background-color: #3e8e41}
+
+.catchBagButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.bar{
+    position: relative;
+    top: -80px;
+    right: 96px;
+    transform: rotate(90deg);
+    visibility: hidden;
+    transition: 3s;
+    width: 4px;
+    height: 150px;
+    
+}
+
+
+.arrow{
+    position: relative;
+    width: auto;
+    height: 20px;
+    right: 186px;
+    top:-35px;
+    transform: rotate(270deg);
+    visibility: hidden;
+    transition: 3s;
+}
+
+.baitFishing{
+    position: relative;
+    top: 0px;
+    left: 120px;
+    visibility: visible;
+    transition: 1s;
+    /*t-600.l-(-200).h-110 left bottom*/
+    /*t-450.l-280.h-60  left top*/
+    /*t-450.l-440.h-60  right top*/
+    /*t-600.l-440.h-110 right bottom*/ 
+}
+
+.baitFishing img{
+    width: auto;
+    height: 43px;
+    opacity: 0.55;
+
+}
+
+.rod{
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: -200px;
+    top: 170px;
+    opacity: 1;
+}
+
+.rod img{
+    width: 550px;
+    height: auto;
+    transform: skew(0deg);
+    transition: 1s;
+}
+
+.catch{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    top: 60px;
+    flex-direction: column;
+    visibility: visible;
+    
+    
+    
+}
+
+.catch > p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.reward > img{
+    left: 24px;
+    top: 10px;
+    position: relative;
+    width: 80px;
+    height: auto;
+}
+
+.gettingFish{
+    transition: 0s;
+    opacity: 0;
+}
+
+.reward > p{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15;
+}
+.reward{
+    
+    position: relative;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(92, 92, 92, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 0 7px 0 #555555;
+    opacity: 0;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.rewardImg{
+    opacity: 1;
+    transition: 1s;
+}
+
+.rewardName{
+    opacity: 1;
+    transition: 1s;
+}
+
+.baitFishing > p{
+    position: relative;
+    top: -90px;
+    left: 40px;
+    color: white;
+}
+
+.health{
+    opacity: 0;
+    transition: 1s;
+}
+
+.bags{
+    display: none;
+    justify-content: center;
+    position: relative;
+    top: 70px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.bagsDisplay{
+    position: relative;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 452px;
+    background-image: url("Bag/bagsDisplay.png");
+    background-size: 500px ;
+    opacity: 1;
+}
+
+.bagsDisplay > *{
+    position: relative;
+    top: 60px;
+    justify-content: center;
+}
+
+.bagsNavigation{
+    display: flex;
+}
+
+.bagsContent{
+    opacity: 1;
+    transition: 0.3s;
+    
+}
+
+.bagsSelect{
+    background-image: url(Bag/select.png);
+    background-size: 150px ;
+    width: 150px;
+    height: 60px;    
+    position: relative;
+    mix-blend-mode: normal;
+    text-align: center;
+}
+
+.bagsSelect > p{
+    position: relative;
+    top: 4;
+}
+
+.bagsLeft{
+    background-image: url(Bag/left.png);
+    background-size: 30px ;
+    width: 30px;
+    height: 32px;
+    position: relative;
+    top: 90px;
+    left: -5px;
+}
+
+.bagsRight{
+    background-image: url(Bag/right.png);
+    background-size: 30px ;
+    width: 30px;
+    height: 32px;
+    position: relative;
+    top: 90px;
+    left: 10px;
+}
+
+.bagsButton{
+    cursor: pointer;
+    border: none;
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    transition: 0.2s;
+    mix-blend-mode: normal;
+}
+
+.bagsCloseDisplay:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.bagsCloseImg{
+    position: relative;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    
+}
+
+.bagsLeftImg{
+    position: relative;
+    top: 7px;
+    right: 60px;
+    width: 50px;
+    height: 50px;
+}
+
+.bagsRightImg{
+    position: relative;
+    top: 7px;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+}
+
+.contentItem{
+    left: 60px;
+    display: flex;
+    position: relative;
+    top: 20px;
+    
+}
+
+.contentItem > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 8px;
+    width: 60px;
+    height: 63px;
+    background-image: url("Bag/item.png");
+    background-size: 60px;
+    mix-blend-mode: normal;
+}
+
+.bagItem{
+    mix-blend-mode: normal;
+}
+
+.bagsRod{
+    display: none;
+    position: relative;
+    top: 80px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.rodDisplay > div{
+    background-image: url("Bag/rodDisplay.png");
+    background-size: 160px;
+    width: 160px;
+    height: 61px;
+    margin: 10px;
+    position: relative;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.rod6 > img{
+    position: relative;
+    top: 20px;
+}
+
+.rodBag{
+    width: 120px;
+    position: relative;
+    top: 25px;
+    left: 20px;
+}
+
+.itemFish{
+    position: relative;
+    top: 20px;
+    right: -10px;
+}
+
+.itemTrash{
+    position: relative;
+    top: 17px;
+    right: -17px;
+}
+
+.bagStockFish{
+    color: white;
+    text-align: center;
+    position: relative;
+    right: 2px;
+    bottom: 4px;
+    font-size: 15px;
+}
+
+.bagStockTrash{
+    color: white;
+    text-align: center;
+    position: relative;
+    right: 2px;
+    top: 2px;
+    font-size: 15px;
+}
+
+.bagsItem{
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+    left: 114px;
+    top: 80px;
+    width: 270px;
+    height: 295px;
+    background-image: url(Bag/itemDisplay.png);
+    background-size: 270px;
+    display: none;
+    flex-direction: column;
+}
+
+
+
+.imgItem{
+    width: 120px;
+    height: auto;
+
+}
+
+.bagsItem > *{
+    position: relative;
+    top: -25px;
+    left: 80px;
+    
+}
+
+.imgItem{
+    width: 120px;
+    height: auto;
+    position: relative;
+    top: 80px;
+
+}
+
+.nameItem{
+    width: 100px;
+    top: 75px;
+    left: 86px;
+    position: relative;
+    
+
+}
+
+.stockItem{
+    width: 30px;
+    height: auto;
+    position: relative;
+    top: 53px;
+    left: 122.5px;
+    
+}
+
+.sellItem{
+    display: flex;
+    flex-direction: row;
+}
+
+.sellItem > div{
+    background-image: url("Bag/sell.png");
+    background-size: 75px;
+    width: 75px;
+    height: 78px;
+    position: relative;
+    margin: 5px;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.textItems{
+    display: flex;
+    justify-content: center;
+
+}
+
+.nameItems{
+    position: relative;
+    top: 62;
+    left: -79.5px;
+    font-size: 12;
+}
+
+.nameStock{
+    position: relative;
+    right: 78;
+    top: 37;
+}
+
+.priceItemCoinOne{
+    width: 15px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    left: 18px;
+    top: -8px;
+}
+
+.priceItemCoinAll{
+    width: 15px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    left: 18px;
+    top: -12px;
+}
+
+.sellTextOne{
+    position: relative;
+    left: 21px;
+    top: 3px;
+}
+
+.sellTextAll{
+    position: relative;
+    right: 2px;
+    font-size: 13px;
+}
+
+.priceItemOne{
+    position: relative;
+    left: 13px;
+    font-size: 18px;
+    top: -13px;
+}
+
+.priceItemAll{
+    position: relative;
+    top: -16px;
+    left: 13px;
+}
+
+.bagsBack{
+    position: absolute;
+    cursor: pointer;
+    top: 12;
+    left: 87;
+}
+
+.bagsBack > img{
+    width: 100px;
+}
+
+.albums{
+    display: none;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+
+
+.albumsDisplay{
+    
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    height: 758px;
+    background-image: url("Album/albumDisplay22.png");
+    background-size: 600px ;
+    opacity: 1;
+    
+}
+
+.contentFish{
+    display: flex;
+    position: relative;
+    top: 110px;
+    justify-content: center;
+    
+}
+
+.contentFish > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    width: 160px;
+    height: 145px;
+    background-image: url("Album/fishDisplay.png");
+    background-size: 160px;
+    mix-blend-mode: normal;
+    
+}
+
+
+
+
+.albumRightImg{
+    position: relative;
+    top: 7px;
+    width: 30px;
+    height: auto;
+    left: 10px;
+    
+}
+
+.albumLeftImg{
+    position: relative;
+    top: 7px;
+    right: 60px;
+    width: 30px;
+    height: auto;
+    
+    
+}
+
+.albumContent{
+    display: block;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+
+
+.albumNavigation{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transition: 0.4s;
+
+}
+
+.albumNavigation > button{
+    margin: 80px;
+    position: relative;
+    top: 90px;
+    cursor: pointer;
+    border: none;
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    transition: 0.2s;
+    mix-blend-mode: normal;
+}
+
+.albumButtonRight{
+    position: relative;
+    left: 20px;
+}
+
+.albumSelect{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.albumSelect > img{
+    width: 100px;
+    height: auto;
+}
+
+.fishNameAlbum{
+    text-align: center;
+    position: relative;
+    left: -4px;
+    top: -4px;
+    font-size: 15px;
+}
+
+.fishDisplayAlbum{
+    width: 80px;
+    height: auto;
+    position: relative;
+    top: -10px;
+    left: 35px;
+}
+
+.albumFish{
+    position: relative;
+    display: none;
+    left: 150px;
+    top: 110px;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.albumInfo{
+    display: flex;
+}
+
+.infoFish{
+   background-image: url(Album/fishDisplay.png);
+   background-size: 150px;
+   width: 150px;
+   height: 138px;
+   position: relative;
+   right: 30px;
+   bottom: 0px;
+}
+
+.infoFishText{
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    top: 2.2px;
+    left: -3.3px;
+}
+
+.infoFishImg{
+    position: relative;
+    width: 80px;
+    height: auto;
+    left: 33px;
+    bottom: 10px;
+}
+
+.infoPrice{
+    background-image: url(Album/infoPrice.png);
+    background-size: 100px;
+    width: 100px;
+    height: 110.5px;
+    position: relative;
+    left: 90px;
+    top: 0px;
+}
+
+.infoPriceName{
+    position: relative;
+    top: 20px;
+    font-size: 15px;
+    left: 23px;
+}
+
+.infoPriceText{
+    font-size: 15px;
+    float: left;
+    position: relative;
+    left: 25px;
+    top: 2px;
+    
+}
+
+.infoPriceImg{
+    width: 30px;
+    float: left;
+    position: relative;
+    top: 12px;
+    left: 17px;
+}
+
+.infoHabitat{
+    background-image: url(Album/infoHabitat.png);
+    background-size: 160px;
+    width: 160px;
+    height: 122px;
+    position: relative;
+    right: 0px;
+    top: 5px;
+}
+
+.infoHabitatName{
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+.infoHabitatImage{
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    justify-content: center;
+
+    
+}
+
+.infoHabitatImgName > img{
+    width: 45px;
+    border-radius: 50%;
+    left: 12px;
+    position: relative;
+    
+}
+
+.infoHabitatImgName > p{
+    font-size: 11px;
+    margin: 4px;
+    text-align: center;
+}
+
+.infoBait{
+    background-image: url(Album/infoBait.png);
+    background-size: 100px;
+    width: 100px;
+    height: 104.5px;
+    position: relative;
+    left: 15px;
+    top: 7px;
+
+}
+
+.infoBait > p {
+    text-align: center;
+    position: relative;
+    top: 5px;
+}
+
+.infoBait > img{
+    width: 27px;
+    height: 55px;
+    position: relative;
+    bottom: 15px;
+    left: 16px;
+    margin: 2px;
+
+}
+
+.infoDescription{
+    background-image: url(Album/infoDescription.png);
+    background-size: 320px;
+    width: 320px;
+    height: 246px;
+    position: relative;
+    top: 15px;
+    right: 7px;
+    text-align: center;
+
+}
+
+.infoDescription > p{
+    font-size:20px;
+    position: relative;
+    top: 4px
+}
+
+.infoDescription > div{
+    width: 290px;
+    font-size: 14px;
+    position: relative;
+    left: 14px;
+    top: -7px
+}
+
+.albumInfoClose{
+    position: relative;
+    top: 20px;
+    left: 90px;
+}
+
+.albumInfoCloseButton{
+    text-decoration: none;
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    padding: 0px
+    
+    
+}
+
+.albumInfoCloseImg{
+    width: 130px;
+    cursor: pointer;
+
+}
+
+.albumClose{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.albumCloseImg{
+    width: 150px;
+    position: relative;
+    top: 70px;
+    right: 75px;
+    cursor: pointer;
+}
+
+.maps{
+    display: none;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mapsDisplay{
+    position: relative;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 639px;
+    background-image: url("Map/selectMap.png");
+    background-size: 500px ;
+    opacity: 1;
+    
+
+    
+}
+
+.mapsSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.mapsSelected{
+    background-image: url("Map/mapJingah.png");
+    filter: none; /*grayscale(100%)*/
+    background-size: 300px;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: rgb(96, 62, 0);
+    position: relative;
+    top: 80px;
+    left: 8px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.mapsSelectImg{
+    
+    width: 300px;
+    position: relative;
+    top: 80px;
+    left: 8px;
+    border-radius: 10px;
+    border: 5px solid;
+    border-color: rgb(96, 62, 0);
+}
+
+.mapsName{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    left: 7px;
+    top: 50;
+    font-family: 'Maiden Orange', cursive;
+    color: #EEEEEE;
+
+}
+
+.mapsButtonLeft{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 250px;
+    cursor: pointer;
+}
+
+.mapsButtonRight{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 10px;
+    top: 250px;
+    cursor: pointer;
+}
+
+.mapsButtonRight:active{
+    transform: translateX(2px);
+}
+
+.mapsButtonLeft:active{
+    transform: translateX(-2px);
+}
+
+.mapsLock{
+    display: none;
+    position: absolute;
+    top: 280px;
+}
+
+.mapsLocked{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.mapsLocked > img{
+    width: 100px;
+}
+
+.mapsPrice{
+    position: relative;
+    top: 30px;
+    background-image: url(Map/Price.png);
+    background-size: 150px;
+    width: 150px;
+    height: 57px;
+    display: flex;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mapsPrice > *{
+    position: relative;
+    left: 32px;
+    top: 13px;
+    
+}
+
+.mapsPrice > p{
+    font-size: 30;
+    position: relative;
+    top: 6;
+    color: white;
+    margin: 7;
+    font-family: 'Maiden Orange', cursive;
+    
+}
+
+.mapsCoin{
+    width: 30px;
+    height: 32px;
+}
+
+.closeMaps{
+    position: absolute;
+}
+
+.closeMaps > img{
+    width: 80px;
+    position: relative;
+    left: 240;
+    bottom: 30;
+    cursor: pointer;
+}
+
+.shops{
+    display: none;
+    transition: 0.3s;
+    opacity: 1;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+}
+
+.shopsDisplay{
+    background-image: url("Shop/shopDisplay.png");
+    background-size: 620px;
+    width: 620px;
+    height: 730px;
+}
+
+.shopsName{
+    display: flex;
+    justify-content: center;
+}
+
+.shopsNameText{
+    background-image: url("Shop/shop-removebg-preview.png");
+    background-size: 110px;
+    width: 110px;
+    height: 73px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+
+.shopsNameText > p{
+    position: relative;
+    top: 10px;
+}
+
+
+
+.shopsSell{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    left: 2px;
+}
+
+.ShopsBait{
+    background-image: url(Shop/baitSelect.png);
+    width: 200px;
+    background-size: 200px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.ShopsBait > p{
+    text-align: center;
+    position: relative;
+    top: 16;
+    right: 7px;
+    font-size: 23;
+    
+}
+
+.ShopsRod{
+    background-image: url(Shop/rodSelect.png);
+    width: 200px;
+    background-size: 200px;
+    height: 110px;
+    cursor: pointer;
+
+}
+
+.ShopsRod > p{
+    text-align: center;
+    position: relative;
+    top: 16;
+    right: 7px;
+    font-size: 23;
+    
+}
+
+.shopsSelectSell > img{
+    width: 20px;
+    height: 40px;
+    margin: 13px;
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+}
+
+.shopsSelectSell > p{
+    font-size: 24;
+    position: relative;
+    top: 3px;
+}
+
+.shopsSellingItem{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: -1px;
+    top: 100px;
+}
+
+.shopsItemRod{
+    display: none;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.shopsItemRod > div{
+    background-image: url(Shop/rodShop.png);
+    background-size: 310px;
+    width: 310px;
+    height: 110px;
+    display: flex;
+    opacity: 1;
+    transition: 0.3s;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    top: -30px;
+}
+
+.rods1,.rods2,.rods3,.rods4{
+    width: 160px;
+    height: 32px;
+    margin: 10px;
+    position: relative;
+    top: 28px;
+    right:3px;
+}
+
+.murah, .sakti, .master, .dewa{
+    background-image: url(Shop/buy.png);
+    background-size: 70px;
+    cursor: pointer;
+    width: 70px;
+    height: 74px;
+    margin: 10px;
+    position: relative;
+    top: 4px;
+    left: 3px;
+    pointer-events: auto;
+}
+
+.murah > *, .sakti > *, .master > *, .dewa > *{
+    color: white;
+    position: relative;
+    left: 11;
+    top: 8px;
+    font-size: 15;
+}
+
+.buttonBuy:active{
+    transform: translateY(2px);
+}
+
+
+.coinShop{
+    width: 20;
+    position: relative;
+    top: 4;
+    margin-right:4px ;
+}
+
+.shopsItemBait{
+    display: block;
+    transition: 0.3s;
+    opacity: 1;
+    
+}
+
+.baits{
+    display: flex;
+    margin: -8;
+    position: relative;
+    top: 10px;
+    left: 20;
+}
+
+.baitShopDisplay{
+    background-image: url(Shop/baitShop.png);
+    background-size: 150px;
+    width: 150px;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    bottom: 23px;
+}
+
+.baitShopDisplay > *{
+    position: relative;
+    top: 17px;
+    right: 13;
+    
+}
+
+.baitBuy{
+    background-image: url(Shop/buy.png);
+    background-size: 70px;
+    cursor: pointer;
+    width: 70px;
+    height: 74px;
+    margin: 10px;
+    position: relative;
+    top: -20px;
+    left: -25px;
+}
+
+.baitShopDisplay > p{
+    position: relative;
+    left: 1;
+    top: 13;
+    font-family: 'Maiden Orange', cursive;
+    
+}
+
+.baitCount{
+    background-image: url(Shop/baitCount.png);
+    background-size: 100px;
+    width: 100px;
+    height: 85px;
+    position: relative;
+    bottom: 12;
+    right: 10;
+}
+
+.baitShopImg{
+    width: auto;
+    height: 40;
+}
+
+.textIkan{
+    margin-left: 10px;
+}
+
+.imgCricket{
+    left: -7px;
+}
+
+.baitMinus{
+    background-image: url(Shop/left.png);
+    background-size: 50px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+    top: -5px;
+    left: -2px;
+}
+
+.baitPlus{
+    background-image: url(Shop/right.png);
+    background-size: 50px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+    top: -5px;
+    left: -26px;
+}
+
+.coinShopBait{
+    width: 20;
+    height: auto;
+    position: relative;
+    top: 300px;
+    margin-right:4px ;
+    float: left;
+}
+
+.baitBuy > *{
+    position: relative;
+    top: 30px;
+    font-size: 20;
+    left: 10px;
+}
+
+.baitBuy> p{
+    position: relative;
+    top: 9px;
+}
+
+.baitCount > *{
+    position: relative;
+    text-align: center;
+    right: 7;
+    font-size: 25;
+    top: -2;
+}
+
+.closeShops{
+    position: absolute;
+
+}
+
+.closeShops > img{
+
+    width: 80px;
+    position: relative;
+    left: -263px;
+    
+    cursor: pointer;
+}
+
+.closeShops:active{
+    transform: translateX(3px);
+    transform: translateY(1px);
+}
+
+.coinPreview{
+    position: absolute;
+    background-image: url("Shop/coinView.png");
+    width: 160px;
+    height: 83px;
+    background-size: 160px;
+    top: 670;
+}
+
+.coinPreview *{
+    position: relative;
+    top: 28px;
+    left: 35px;
+}
+
+.coinPreview > img{
+    width: 30px;
+    float: left;
+}
+
+.coinPreview > p{
+    position: relative;
+    font-size: 25px;
+    top: 5;
+    left: 40;
+}
+
+.coinPreviewMap{
+    position: absolute;
+    background-image: url("Shop/coinView.png");
+    width: 160px;
+    height: 83px;
+    background-size: 160px;
+    top: 600;
+}
+
+.coinPreviewMap *{
+    position: relative;
+    top: 28px;
+    left: 35px;
+}
+
+.coinPreviewMap > img{
+    width: 30px;
+    float: left;
+    top: 28px;
+}
+
+.coinPreviewMap > p{
+    position: relative;
+    font-size: 25px;
+    top: 5;
+    color: #181D31;
+    left: 45;
+    font-family: 'Maiden Orange', cursive;
+}
+
+.quests{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+    
+}
+
+.questsa{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.allQuest{
+
+    cursor: pointer;
+    position: relative;
+    background-color: #001C30;
+    width: 30px;
+    height: 100px;
+    left: 57px;
+    bottom: 130px;
+    border-radius: 10px 2px 2px 10px;
+
+}
+
+.allQuest > p{
+    color: white;
+    font-family: 'Maiden Orange', cursive;
+    position: relative;
+    bottom: 10;
+    text-align: center;
+}
+
+.questsDisplay{
+    display: none;
+    top: 100px;
+    position: absolute;
+    width: 500px;
+    height: 675px;
+    background-size: 500px;
+    background-image: url(Quest/questsDisplay.png);
+}

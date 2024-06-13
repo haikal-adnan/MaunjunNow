@@ -1,0 +1,537 @@
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maunjun Now</title>
+    <link rel="stylesheet" href="mancing_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maiden+Orange&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Backsound -->
+    <audio class="backsoundMap">
+        <source src="Map/soundJingah.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Fishing -->
+    <audio class="fishingThrow">
+        <source src="Fishing/offRod.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="fishingGet">
+        <source src="Fishing/fishGet.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="fishingPull" loop>
+        <source src="Fishing/fishPull.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main">
+        <div>
+            <img src="Map/mapJingah.png" class="mapDisplay" alt="">
+        </div>
+        <div class="displayMap" onclick="openMap()">
+            <img src="Map/displayMapJingah.png" class="mapPicture" alt="">
+            <p>Sungai Jingah</p>
+        </div>
+        <div class="questDisplay">
+            <p class="quest1 questDisplays">(0/5) Tangkap 5 sembarang ikan</p>
+            <p class="quest2 questDisplays">(0/5) Beli 5 umpan cacing</p>
+            <p class="quest3 questDisplays">(0/5) Beli 1 pancingan apa saja</p>
+        </div>
+        <div class="navigation">
+            <div class="quest"><button class="questButton" onclick="openQuest()">
+                               <img src="Navigation/quest.png" class="navImg questOpen"></button>
+            </div>
+            <div class="bag" onclick="openBag()"><img src="Navigation/bag.png" class="navImg"></div>
+            <div class="album" onclick="openAlbum()"><img src="Navigation/album.png" class="navImg"></a></div>
+            <div class="shop" onclick="openShop()"><img src="Navigation/shop.png" class="navImg">
+                             
+            </div>         
+        </div>    
+    </div>
+    
+    <div class="questsa">
+        <div class="quests">
+            <div class="allQuest" onclick="openQuestAll()">
+                <p>Q<br>U<br>E<br>S<br>T</p>
+            </div>
+            <div class="questsDisplay">
+    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="maps">
+        <div class="mapsDisplay">
+            <div class="mapsName">
+                <p>Sungai Jingah</p>
+            </div>
+            <div class="mapsSelect">
+                <img src="Map/left.png" alt="" class="mapsButtonLeft" onclick="mapsLeft()">
+                <div class="mapsSelected" onclick="selectMap()"></div>
+                <div class="mapsLock">
+                    <div class="mapsLocked">
+                        <img src="Map/locked.png" alt="">
+                    </div>
+                    <div class="mapsPrice" onclick ="buyMap()">
+                        <img src="Map/coin2.png" alt="" class="mapsCoin">
+                        <p></p>
+                    </div>
+                </div>
+                <img src="Map/right.png" alt=""class="mapsButtonRight" onclick="mapsRight()">
+            </div>
+        </div>
+        <div class=""></div>
+        <div class="closeMaps" onclick="closeMap()">
+            <img src="Map/closeMap.png" alt="">
+        </div>
+        <div class="coinPreviewMap">
+            <img src="Bag/coin.png" alt=""><p class="coin"></p>
+        </div>
+    </div>
+    
+
+    <div class="bags">
+        <div class="bagsDisplay">
+            <div class="bagsNavigation">
+                <button class="bagsButton" onclick="bagLeft()">
+                    <img src="Bag/left.png" alt="" class="bagsLeftImg">
+                </button>
+                <div class="bagsSelect">
+                    <p>TANGKAPAN</p>
+                </div>
+                <button class="bagsButton" onclick="bagRight()">
+                    <img src="Bag/right.png" alt="" class="bagsRightImg">
+                </button>
+            </div>
+            <div class="bagsContent">
+                <div class="contentItem">
+                    <div class="bag1"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag2"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag3"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag4"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag5"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                </div>
+                <div class="contentItem">
+                    <div class="bag6"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag7"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag8"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag9"  onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag10" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                </div>
+                <div class="contentItem">
+                    <div class="bag11" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag12" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag13" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag14" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                    <div class="bag15" onclick="checkBagIndex(this.getAttribute('class'))"></div>
+                </div>
+            </div>
+
+            <div class="bagsRod">
+                <div class="rodDisplay">
+                    <div class="rod1" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                    <div class="rod2" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                    <div class="rod3" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                </div>
+                <div class="rodDisplay">
+                    <div class="rod4" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                    <div class="rod5" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                    <div class="rod6" onclick="checkRod(this.getAttribute('class'))">
+                        <img src="" alt="" class="rodBag">
+                    </div>
+                </div>
+            </div>
+            <div class="bagsItem">
+                <div class="bagsBack" onclick="backBag()">
+                    <img src="Bag/backBag.png" alt="">
+                </div>
+                <img src="Fish/bawal.png" alt="" class="imgItem">
+                <img src="Bag/nameItem.png" alt="" class="nameItem">
+                <div class="textItems">
+                    <p class="nameItems"></p>
+                </div>
+                
+                <img src="Bag/item.png" alt="" class="stockItem">
+                <div class="textItems">
+                    <p class="nameStock">0</p>
+                </div>
+                <div class="sellItem">
+                    <div class="sellOne" onclick="sellFishOne()">
+                        <p class="sellTextOne">Jual</p>
+                        <img src="Bag/coin.png" alt="" class="priceItemCoinOne">
+                        <p class="priceItemOne"></p>
+                    </div>
+                    <div class="sellAll" onclick="sellFishAll()">
+                        <p align="center" class="sellTextAll">Jual<br>Semua</p>
+                        <img src="Bag/coin2.png" alt="" class="priceItemCoinAll">
+                        <p class="priceItemAll"></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="bagsClose">
+            <button class="bagsButton" onclick="closeBag()">
+                <img src="Bag/closeBag.png" alt="" class="bagsCloseImg">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="albums">
+        <div class="albumsDisplay">
+            <div class="albumContent">
+                <div class="contentFish">
+                    <div class="fish1" onclick="checkAlbumIndex(this.getAttribute('class'))">
+                        <p class="fishNameAlbum"></p>
+                        <img src="" alt="" class="fishDisplayAlbum">
+                    </div>
+                    <div class="fish2" onclick="checkAlbumIndex(this.getAttribute('class'))">
+                        <p class="fishNameAlbum"></p>
+                        <img src="" alt="" class="fishDisplayAlbum"></div>
+                </div>
+                <div class="contentFish">
+                    <div class="fish3" onclick="checkAlbumIndex(this.getAttribute('class'))">
+                        <p class="fishNameAlbum"></p>
+                        <img src="" alt="" class="fishDisplayAlbum"></div>
+                    <div class="fish4" onclick="checkAlbumIndex(this.getAttribute('class'))">
+                        <p class="fishNameAlbum"></p>
+                        <img src="" alt="" class="fishDisplayAlbum"></div>
+                </div>
+            </div>
+            <div class="albumNavigation">
+                <button class="albumButtonLeft" onclick="albumLeft()">
+                    <img src="Album/left.png" alt="" class="albumLeftImg">
+                </button>
+
+                <button class="albumButtonRight" onclick="albumRight()">
+                    <img src="Album/right.png" alt="" class="albumRightImg">
+                </button>
+            </div>
+            <div class="albumSelect">
+                <img src="Album/select1.png" alt="">
+            </div>
+            <div class="albumClose">
+                <button class="albumInfoCloseButton" onclick="closeAlbum()">
+                    <img src="Album/backAlbum.png" alt="" class="albumCloseImg">
+                </button>
+            </div>
+            <div class="albumFish">
+                <div class="albumInfo">
+                    <div class="infoFish">
+                        <p class="infoFishText">BAUNG</p>
+                        <img src="Fish/baung.png" alt="" class="infoFishImg">
+                    </div>
+
+                    <div class="infoHabitat">
+                        <p class="infoHabitatName">Habitat</p>
+                        <div class="infoHabitatImage">
+                            <div class="infoHabitatImgName">
+                                <img src="" alt="" class="infoHabitatImg1">
+                                <p class="infoHabitatImgText1"></p>
+                            </div>
+                            <div class="infoHabitatImgName">
+                                <img src="" alt="" class="infoHabitatImg2">
+                                <p class="infoHabitatImgText2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="albumInfo">
+                    <div class="infoBait">
+                        <p>Umpan</p>
+                        <img src="" alt="" class="fishBaitAlbum1">
+                        <img src="" alt="" class="fishBaitAlbum2">
+                    </div>
+                    <div class="infoPrice">
+                        <p class="infoPriceName">Harga Jual</p>
+                        <img src="Album/coin2.png" alt="" class="infoPriceImg"></p>
+                        <p class="infoPriceText"></p>
+                    </div>
+
+                </div>
+                <div class="albumInfo">
+                    <div class="infoDescription">
+                        <p>Deskripsi</p>
+                        <div align="justify" class="textDescription">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="albumInfoClose">
+                    <button class="albumInfoCloseButton" onclick="closeAlbumInfo()">
+                        <img src="Album/backAlbum.png" alt="" class="albumInfoCloseImg">
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="shops">
+        <div class="shopsDisplay">
+            <div class="shopsSell">
+                <div class="shopsRod" onclick="shopRod()">
+                    <p>PANCINGAN</p>
+                </div>
+                <div class="shopsBait" onclick="shopBait()">
+                    <p>UMPAN</p>
+                </div>
+            </div>
+            <div class="shopsSellingItem">
+                <div class="shopsItemRod">
+                    <div class="rods1">
+                        <img src="Rod/murah.png" alt="" class="rods1">
+                        <div class="murah" onclick="buyMurah()">
+                            <p><img src="Shop/coin2.png" alt="" class="coinShop">75</p>
+                        </div>
+
+                    </div>
+                    <div class="rods2">
+                        <img src="Rod/sakti.png" alt="" class="rods2">
+                        <div class="sakti" onclick="buySakti()">
+                            <p><img src="Shop/coin2.png" alt="" class="coinShop">120</p>
+                        </div>
+                    </div>
+                    <div class="rods3">
+                        <img src="Rod/master.png" alt="" class="rods3">
+                        <div class="master" onclick="buyMaster()">
+                            <p><img src="Shop/coin2.png" alt="" class="coinShop">190</p>
+                        </div>
+                    </div>
+                    <div class="rods4">
+                        <img src="Rod/dewa.png" alt="" class="rods4">
+                        <div class="dewa" onclick="buyDewa()">
+                            <p><img src="Shop/coin2.png" alt="" class="coinShop">300</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shopsItemBait">
+                    <div class="baits">
+                        <div class="baitShopDisplay">
+                            <img src="Bait/worm.png" alt="" class="baitShopImg">
+                            <p>CACING</p>
+                        </div>
+                        <div class="baitMinus" onclick="minusCountWorm()"></div>
+                        <div class="baitCount">
+                            <p class="countWorm">0</p>
+                        </div>
+                        <div class="baitPlus" onclick="plusCountWorm()"></div>
+                        <div class="baitBuy" onclick="buyWorm()">
+                            <img src="Shop/coin2.png" alt="" class="coinShopBait"><p class="priceWorm">0</p>
+                        </div>
+                    </div>
+                    <div class="baits">
+                        <div class="baitShopDisplay">
+                            <img src="Bait/frog.png" alt="" class="baitShopImg">
+                            <p>KATAK</p>
+                        </div>
+                        <div class="baitMinus" onclick="minusCountFrog()"></div>
+                        <div class="baitCount">
+                            <p class="countFrog">0</p>
+                        </div>
+                        <div class="baitPlus" onclick="plusCountFrog()"></div>
+                        <div class="baitBuy" onclick="buyFrog()">
+                            <img src="Shop/coin2.png" alt="" class="coinShopBait"><p class="priceFrog">0</p>
+                        </div>
+                    </div>
+                    <div class="baits">
+                        <div class="baitShopDisplay">
+                            <img src="Bait/cricket.png" alt="" class="baitShopImg ImgCricket">
+                            <p>JANGKRIK</p>
+                        </div>
+                        <div class="baitMinus" onclick="minusCountCricket()"></div>
+                        <div class="baitCount">
+                            <p class="countCricket">0</p>
+                        </div>
+                        <div class="baitPlus" onclick="plusCountCricket()"></div>
+                        <div class="baitBuy" onclick="buyCricket()">
+                            <img src="Shop/coin2.png" alt="" class="coinShopBait"><p class="priceCricket">0</p>
+                        </div>
+                    </div>
+                    <div class="baits">
+                        <div class="baitShopDisplay">
+                            <img src="Bait/moss.png" alt="" class="baitShopImg">
+                            <p>LUMUT</p>
+                        </div>
+                        <div class="baitMinus" onclick="minusCountMoss()"></div>
+                        <div class="baitCount">
+                            <p class="countMoss">0</p>
+                        </div>
+                        <div class="baitPlus" onclick="plusCountMoss()"></div>
+                        <div class="baitBuy" onclick="buyMoss()">
+                            <img src="Shop/coin2.png" alt="" class="coinShopBait"><p class="priceMoss">0</p>
+                        </div>
+                    </div>
+                    <div class="baits">
+                        <div class="baitShopDisplay">
+                            <img src="Bait/miniFish.png" alt="" class="baitShopImg">
+                            <p class="textIkan">IKAN</p>
+                        </div>
+                        <div class="baitMinus" onclick="minusCountMini()"></div>
+                        <div class="baitCount">
+                            <p class="countMini">0</p>
+                        </div>
+                        <div class="baitPlus" onclick="plusCountMini()"></div>
+                        <div class="baitBuy" onclick="buyMini()">
+                            <img src="Shop/coin2.png" alt="" class="coinShopBait"><p class="priceMini">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="closeShops" onclick="closeShop()">
+            <img src="Shop/closeShop.png" alt="">
+        </div>
+        <div class="coinPreview">
+            <img src="Bag/coin.png" alt=""><p class="coins"></p>
+        </div>
+
+
+
+       
+    </div>
+
+    <div class="catch">
+        <p class="gettingFish">BERHASIL MENDAPATKAN</p>
+        <div class="reward">
+            <img src="Reward/reward3.png" alt="" class="rewardImg">
+            <p class="rewardName"></p>
+        </div> 
+    </div>
+
+    <div class="baitSelect">
+        <button class="baitName" onclick="baitHidden(); vs()"></button>
+        <div class="bait">
+            <img src="Bait/worm.png" class="baitImg">
+            <div class="baitStock"></div>
+            <button class="baitLeft" onclick="baitLeft()"><img src="Bait/Left.png" class="buttonBait"></button>
+            <button class="baitRight" onclick="baitRight()"><img src="Bait/Right.png" class="buttonBait"></button>
+        </div>
+    </div>
+    <div class="rod">
+        <img src="Rod/pemulaPlay.png" alt="" class="rodPlay">
+    </div>
+    
+    <div class="fishing">
+        <div class="baitFishing">
+            <img src="Bait/bait.png" alt="">
+            <p class="health">
+            </p>
+        </div>
+        <button class="fishingButton" active>LEMPAR<br>UMPAN</button>
+        <button class="catchButton" active>Tangkap</button>
+        <button class="catchBagButton" active></button>
+        
+        <img src="Fishing/bar.png" class="bar">
+        <img src="Fishing/arrow.png" class="arrow">
+    </div>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getDatabase, ref, set, push, get, child, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC5WrEKZTIoYa6321WaOqal91_41Ek0JWg",
+            authDomain: "maunjun-71c6e.firebaseapp.com",
+            projectId: "maunjun-71c6e",
+            storageBucket: "maunjun-71c6e.appspot.com",
+            messagingSenderId: "153964118348",
+            appId: "1:153964118348:web:f15f7a816467fd25aa0fe9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase()
+
+        let tesa = document.querySelector("body")
+        let users = localStorage.getItem("user")
+        
+        tesa.addEventListener("click",updates)
+
+        
+        function updates(){
+            
+            if(users == "false"){
+                tesa.removeEventListener("click",updates)
+                return
+            }
+            
+            update(ref(db, `pengguna/${uid}/data`),{
+                coin: coin,
+                mapNow: mapNow,
+                rodEquip: rodEquip
+
+            })
+            
+            update(ref(db, `pengguna/${uid}/data/bait`),{
+                worm : bait["worm"]["baitStock"],
+                cricket : bait["cricket"]["baitStock"],
+                frog : bait["frog"]["baitStock"],
+                moss : bait["moss"]["baitStock"],
+                mini : bait["mini"]["baitStock"]
+            })
+
+            update(ref(db, `pengguna/${uid}/data/map`),{
+                barito   : maps["barito"]["mapUnlock"],
+                jingah   : maps["jingah"]["mapUnlock"],
+                kapuas   : maps["kapuas"]["mapUnlock"],
+                kelayan  : maps["kelayan"]["mapUnlock"],
+                kuin     : maps["kuin"]["mapUnlock"],
+                martapura: maps["martapura"]["mapUnlock"],
+            })
+
+            update(ref(db, `pengguna/${uid}/data/rod`),{
+                pemula : rod["pemula"]["unlockRod"],
+                zaki   : rod["zaki"]["unlockRod"],
+                sakti  : rod["sakti"]["unlockRod"],
+                murah  : rod["murah"]["unlockRod"],
+                master : rod["master"]["unlockRod"],
+                dewa   : rod["dewa"]["unlockRod"]
+            })
+
+            update(ref(db, `pengguna/${uid}/data/trash/trash1`),{
+                trashStock  : trash["trash1"]["trashStock"],
+                trashUnlock : trash["trash1"]["trashUnlock"]
+            })
+            
+            update(ref(db, `pengguna/${uid}/data/trash/trash2`),{
+                trashStock  : trash["trash2"]["trashStock"],
+                trashUnlock : trash["trash2"]["trashUnlock"]
+            })
+
+            update(ref(db, `pengguna/${uid}/data/trash/trash3`),{
+                trashStock  : trash["trash3"]["trashStock"],
+                trashUnlock : trash["trash3"]["trashUnlock"]
+            })  
+
+            for(let fish in data["fish"]){
+                update(ref(db, `pengguna/${uid}/data/fish/${fish}`),{
+                fishStock  : fishs[`${fish}`]["fishStock"],
+                fishUnlock : fishs[`${fish}`]["fishUnlock"]
+            })  
+            }
+    }
+    </script>
+    </script>
+    <script type="text/javascript" src="mancing_java.js"></script>
+</body>
+</html>

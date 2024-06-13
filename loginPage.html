@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="loginPage.css" />
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="email" id="email_signin" placeholder="Email" class="user"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="psw_signin" placeholder="Password" class="pass"/>
+            </div>
+            <a class="btn login"><p>login</p></a>
+            
+            <p class="social-text">Atau login menggunakan akun guest</p>
+            <p class="social-text">(Kemajuan game tidak akan disimpan ketika menggunakan akun guest)</p>
+            <input type="submit" value="Guest" class="btnGuest solid" id="button_signin" onclick="guestLogin()"/>
+           
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name_signup" placeholder="Name" class="username"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email_signup" placeholder="Email" class="email"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              
+              <input type="password" id="psw_signup" placeholder="Password" class="password"/>
+            </div>
+            <a class="btn register" href="#"><p>Sign Up</p></a>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Tidak punya akun ?</h3>
+            <p>
+              Daftar sekarang juga, gratis
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <!-- <img src="img/log.svg" class="image" alt="" /> -->
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Sudah punya akun ?</h3>
+            <p>
+              Login sekarang dan mainkan gamenya
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <!-- <img src="img/register.svg" class="image" alt="" /> -->
+        </div>
+      </div>
+    </div>
+    <div class="guestButton">
+      <div class="infoGuest"></div>
+    </div>
+    
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+      import { getDatabase, ref, set, push, get, child, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+      
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC5WrEKZTIoYa6321WaOqal91_41Ek0JWg",
+        authDomain: "maunjun-71c6e.firebaseapp.com",
+        projectId: "maunjun-71c6e",
+        storageBucket: "maunjun-71c6e.appspot.com",
+        messagingSenderId: "153964118348",
+        appId: "1:153964118348:web:f15f7a816467fd25aa0fe9"
+      };
+      
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      const db = getDatabase()
+      
+      let dataNew = {
+      "coin"     : 10,
+      "rodEquip" : "pemula",
+      "mapNow"   : "jingah",
+      "trash" : {
+        "trash1" : {"trashStock"  : 0,
+                    "trashUnlock" : false},
+        "trash2" : {"trashStock"  : 0,
+                    "trashUnlock" : false},
+        "trash3" : {"trashStock"  : 0,
+                    "trashUnlock" : false}},
+      "bait" : {
+        "worm"    : 0,
+        "cricket" : 0,
+        "frog"    : 0,
+        "moss"    : 0,
+        "mini"    : 0},
+
+      "rod" : {
+        "pemula" : true,
+        "zaki"   : false,
+        "sakti"  : false,
+        "murah"  : false,
+        "master" : false,
+        "dewa"   : false},
+
+      "map" :
+        {"jingah"   : true,
+          "barito"   : false,
+          "kapuas"   : false,
+          "kelayan"  : false,
+          "kuin"     : false,
+          "martapura": false},
+
+      "fish" : 
+        {"bawal"    :
+          {"fishStock"   : 0,
+           "fishUnlock"  : false},
+
+          "jelawat"   : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "kakapPutih": {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "kelabau"   : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "papuyu"    : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "patin"     : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "toman"     : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "baung"     : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "biawan"    : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "haruan"    : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "sapatSiam" : {
+            "fishStock"  : 0,
+            "fishUnlock" : false},
+
+          "lais"      : {
+            "fishStock"  : 0,
+            "fishUnlock" : false
+      }}
+
+}
+      let login = document.querySelector(".login")
+      let register = document.querySelector(".register")
+      let guest = document.querySelector(".btnGuest")
+      register.addEventListener('click',function() {
+          let email = document.querySelector(".email").value
+          let password = document.querySelector(".password").value
+          let username = document.querySelector(".username").value
+          createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+              // Signed in   
+
+              const user = userCredential.user;
+              set(ref(db, 'pengguna/' + user.uid),{
+                  username : username,
+                  email : email,
+                  password : password,
+                  data : dataNew
+              })
+              // ...
+              alert('Akun Berhasil Terdaftar')
+          })
+          .catch((error) => {
+              alert('Error')
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // ..
+          });
+      })
+
+      
+      
+      function logins(){
+        let email = document.querySelector(".user").value
+        let password = document.querySelector(".pass").value
+        let username = document.querySelector(".username").value
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          const uid = user.uid
+          localStorage.setItem("uid", uid)
+
+          // Mengambil data progress pengguna
+          const dbref = ref(db);
+          get(child(dbref,`pengguna/${uid}`)).then((snapshot) =>{
+            if(snapshot.exists()){
+              let data = snapshot.val().data
+              localStorage.setItem("data", JSON.stringify(data))
+              localStorage.setItem("user", JSON.stringify(true))
+              alert('Selamat Bermain')
+              window.open("mancing.html")
+            }
+
+            else{
+              alert("No data found")
+            }
+          })
+          
+          
+
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("error")
+        });
+
+      }
+      login.addEventListener('click',logins)
+      // let idk = ""
+      // loge.addEventListener('click',function() {
+      //     let email = document.querySelector(".username").value
+      //     let password = document.querySelector(".password").value
+      //     signInWithEmailAndPassword(auth, email, password)
+      //     .then((userCredential) => {
+      //         // Signed in 
+      //         const user = userCredential.user;
+      //         alert("berhasil login")
+      //         // ...
+      //         idk = user.uid
+      //         update(ref(db, 'pengguna/' + user.uid),{
+
+      //             stock : 2
+      //         })
+              
+      //     })
+      //     .catch((error) => {
+      //         const errorCode = error.code;
+      //         const errorMessage = error.message;
+      //     });
+      // })
+      // mape.addEventListener('click',function(){
+      //     update(ref(db, 'pengguna/' + idk),{
+      //             stock : paer.value
+      //         })
+      // })
+      guest.addEventListener("click",guestLogin)
+      function guestLogin(){
+        localStorage.setItem("data", JSON.stringify(dataNew))
+        localStorage.setItem("user", JSON.stringify(false))
+        alert('Selamat Bermain')
+        window.open('mancing.html')
+    }
+    
+  </script>
+  <script>
+
+
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
+
+    sign_up_btn.addEventListener("click", () => {
+      container.classList.add("sign-up-mode");
+    });
+
+    sign_in_btn.addEventListener("click", () => {
+      container.classList.remove("sign-up-mode");
+    });
+
+
+  </script>
+  </body>
+</html>
