@@ -578,6 +578,8 @@ function checkBait(baitStock){
 const a = document.querySelector(".fishingButton");
 a.addEventListener("mousedown", up);
 a.addEventListener("mouseup", down);
+a.addEventListener("touchstart", up);
+a.addEventListener("touchend", down);
 
 for(let i in bait){
     if(bait[i]["baitStock"] == 0){
